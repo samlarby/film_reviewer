@@ -22,7 +22,7 @@
                 <li><a href="#">Home</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('films') }}">Films</a></li>
-                    <li><a href="#">Add Review</a></li>
+                    <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
@@ -37,8 +37,8 @@
                 <li><h4 class="center-align">Film Reviews</h4></li>
                 <li><a href="#">Home</a></li>
                 {% if session.user %}
-                <li><a href="#">Films</a></li>
-                <li><a href="#">Add Review</a></li>
+                <li><a href="{{ url_for('films') }}">Films</a></li>
+                <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
