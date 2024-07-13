@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    {% for film in films %}
-        {{ film.film_name}}
-    {% endfor %}
+    <ul class="collection">
+      {% for film in films %}
+        <li class="collection-item avatar">
+          <img src="images/yuna.jpg" alt="" class="circle">
+          <strong>{{ film.film_name }}</strong>
+          <p> {{ film.release_date }} </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        {% endfor %}
+      </ul>
 {% endblock %}

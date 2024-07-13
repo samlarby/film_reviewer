@@ -18,9 +18,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 @app.route("/")
-@app.route("/get_films")
-def get_films():
-    films = mongo.db.films.find()
+@app.route("/films")
+def films():
+    films = list(mongo.db.films.find())
     return render_template("films.html", films=films)
 
 @app.route("/register", methods=["GET", "POST"])
