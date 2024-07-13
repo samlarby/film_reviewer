@@ -8,12 +8,38 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    {% block styles%}
+    {% block styles %}
     {% endblock %}
     <title>Film Reviews</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">Film Reviews</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <ul class="sidenav" id="mobile-demo">
+                <li><h4 class="center-align">Film Reviews</h4></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+          </ul>
+                  
+        
+    </header>
+
     {% block content %}
     {% endblock %}
     
