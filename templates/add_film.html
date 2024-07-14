@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add your review of a film</h3>
+    <h3 class="center-align">Add a film that has not been reviewed yet</h3>
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+        <form class="col s12" method="POST" action="{{ url_for('add_film') }}">
           <div class="row">
               <div class="input-field col s12">
                 <i class="fa-solid fa-film prefix"></i> 

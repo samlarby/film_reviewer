@@ -7,7 +7,15 @@
           <strong>{{ film.film_name }}</strong>
           <p> {{ film.release_year }} </p>
           <p> {{ film.director }} </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          <!-- <a href="#!" class=""><i class="fa-solid fa-pen">Add your review</i></a> -->
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Add your review</div>
+              <div class="collapsible-body">
+                
+              </div>
+            </li>
+          </ul>
         </li>
         {% endfor %}
       </ul>
