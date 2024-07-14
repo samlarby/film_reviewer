@@ -3,12 +3,13 @@
     <ul class="collection">
       {% for film in films %}
         <li class="collection-item avatar">
-          <img src="images/yuna.jpg" alt="" class="circle">
+          <img src="{{ film.film_image }}"  class="circle responsive-img">
           <strong>{{ film.film_name }}</strong>
           <p> {{ film.release_year }} </p>
           <p> {{ film.director }} </p>
+          <a class="waves-effect waves-light btn-small">Edit</a>
           <!-- <a href="#!" class=""><i class="fa-solid fa-pen">Add your review</i></a> -->
-          <ul class="collapsible">
+          <ul class="collapsible col-s8">
             <li>
               <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Add your review</div>
               <div class="collapsible-body">
