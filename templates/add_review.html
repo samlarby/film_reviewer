@@ -3,22 +3,32 @@
 
     <h3 class="center-align">Add your review of a film</h3>
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
           <div class="row">
-            <div class="input-field col s12">
-              <i class="fa-solid fa-film prefix"></i>
-              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-              <label for="icon_prefix2">Film Name</label>
+              <div class="input-field col s12">
+                <i class="fa-solid fa-film prefix"></i> 
+                <input id="film_name" name="film_name" class="validate" 
+                minlength="5" maxlength="50" required></input>
+                <label for="film_name">Film Name</label>
               <div class="input-field col s12">
                 <i class="fa-solid fa-person prefix"></i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">Director</label>
+                <input id="director" name="director" class="validate"
+                 minlength="5" maxlength="50"required></input>
+                <label for="director">Director</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-calendar-days prefix"></i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">Release Date</label>
+                <input id="release_year" name="release_year" class="validate" 
+                pattern="^[0-9]{5, 15}$"required></input>
+                <label for="release_year">Release Year</label>
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center-align">
+              <button class="btn waves-effect waves-light" type="submit">Submit
+                <i class="material-icons right">send</i>
+              </button>
             </div>
           </div>
         </form>
