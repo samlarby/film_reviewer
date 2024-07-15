@@ -7,7 +7,7 @@
           <strong>{{ film.film_name }}</strong>
           <p> {{ film.release_year }} </p>
           <p> {{ film.director }} </p>
-          <a class="waves-effect waves-light btn-small">Edit</a>
+          <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Edit</a>
           <a class="waves-effect waves-light btn-small red">Delete</a>
 
           <!-- <a href="#!" class=""><i class="fa-solid fa-pen">Add your review</i></a> -->

@@ -107,6 +107,13 @@ def add_film():
         return redirect(url_for('films'))
     return render_template("add_film.html")
 
+
+@app.route("/edit_film/<film_id>", methods=["GET", "POST"])
+def edit_film(film_id):
+    film = mongo.db.films.find_one({"_id":ObjectId(film_id)})
+    return render_template("edit_film.html", film=film)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
