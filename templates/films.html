@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="blue-text">Films</h3>
-    <ul class="collection">
       <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -19,6 +18,8 @@
             </div>
         </form>
     </div>
+    {% if films|length > 0 %}
+    <ul class="collection">
       {% for film in films %}
         <li class="collection-item avatar">
           <img src="{{ film.film_image }}"  class="circle responsive-img">
@@ -40,4 +41,7 @@
         </li>
         {% endfor %}
       </ul>
+      {% else %}
+      <h3 class="red-text">No results found</h3>
+      {% endif %}
 {% endblock %}
