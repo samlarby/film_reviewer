@@ -23,6 +23,12 @@ def films():
     films = list(mongo.db.films.find())
     return render_template("films.html", films=films)
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    films = list(mongo.db.filmss.find({"$text": {"$search": query}}))
+    return render_template("films.html", tasks=tasks)
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -100,7 +106,7 @@ def add_film():
             "film_name": request.form.get("film_name"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
-            #"created_by": session["user"]
+            "film_image": request.form.get("film_image")
         }
         mongo.db.films.insert_one(film)
         flash("Film successfully added")
@@ -110,8 +116,24 @@ def add_film():
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
+    if request.method == "POST":
+        submit = { "$set": {
+            "film_name": request.form.get("film_name"),
+            "director": request.form.get("director"),
+            "release_year": request.form.get("release_year"),
+            "film_image": request.form.get("film_image")
+        }}
+        mongo.db.films.update_one({"_id": ObjectId(film_id)}, submit)
+        flash("Film successfully edited")
     film = mongo.db.films.find_one({"_id":ObjectId(film_id)})
     return render_template("edit_film.html", film=film)
+
+
+@app.route("/delete_film/<film_id>")
+def delete_film(film_id):
+    mongo.db.films.delete_one({"_id": ObjectId(film_id)})
+    flash("Film successfully deleted")
+    return redirect(url_for("films"))
 
 
 if __name__ == "__main__":
