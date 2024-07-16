@@ -17,17 +17,28 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
+
+
+
 @app.route("/")
 @app.route("/films")
 def films():
     films = list(mongo.db.films.find())
     return render_template("films.html", films=films)
 
+
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     films = list(mongo.db.films.find({"$text": {"$search": query}}))
     return render_template("films.html", films=films)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
