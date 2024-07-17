@@ -9,24 +9,24 @@
                 <i class="fa-solid fa-film prefix"></i> 
                 <input id="film_name" name="film_name" class="validate" 
                 minlength="1" maxlength="100" value="{{ film.film_name }}" required></input>
-                <label for="film_name">Film Name</label>
+                <label class="active" for="film_name">Film Name</label>
               <div class="input-field col s12">
                 <i class="fa-solid fa-person prefix"></i>
                 <input id="director" name="director" class="validate"
                  minlength="5" maxlength="50" value="{{ film.director }}"" required></input>
-                <label for="director">Director</label>
+                <label class="active" for="director">Director</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-calendar-days prefix"></i>
                 <input id="release_year" name="release_year" class="validate" 
                 pattern="^[0-9]{5, 15}$" value="{{ film.release_year }}" required></input>
-                <label for="release_year">Release Year</label>
+                <label class="active" for="release_year">Release Year</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-camera-retro prefix"></i>
                 <input id="film_image" name="film_image" class="validate" 
                 value="{{ film.film_image }}"" required></input>
-                <label for="release_year">Upload a film image</label>
+                <label class="active" for="release_year">Upload a film image</label>
               </div>
             </div>
           </div>

@@ -30,10 +30,10 @@
           <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small red">Delete</a>
           <ul class="collapsible col-s8">
             <li>
-              <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Add your review</div>
+              <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Reviews</div>
               <div class="collapsible-body">
-                <!-- <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Edit</a> -->
-                <!-- <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small red">Delete</a> -->
+                <p>{{ film.review }}</p>
+                <a href="{{ url_for('add_review', film_id=film._id) }}" class="waves-effect waves-light btn-small">Add your review</a>
               </div>
             </li>
           </ul>

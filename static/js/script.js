@@ -5,3 +5,6 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.collapsible').collapsible();
 });
+
+$('#reviewarea').val('New Text');
+  M.textareaAutoResize($('#review-area'));

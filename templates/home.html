@@ -1,8 +1,15 @@
 {% extends "base.html" %}
-{% block content %}
-    <div class="container col-s12">
-        <div class="center-align home-button">
-            <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large">Login</a>
-        </div>
+{% block content %} 
+{% if session.user %}
+<div class="container col-s12">
+    <div class="center-align home-button">
+        <a href=" {{ url_for('logout') }}"class="waves-effect waves-light btn-large">Logout</a>
     </div>
+{% else %}
+<div class="center-align home-button">
+    <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large">Login</a>
+    <a href=" {{ url_for('register') }}"class="waves-effect waves-light btn-large">Register</a>
+</div>
+</div>
+{% endif %}
 {% endblock %}

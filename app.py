@@ -88,7 +88,6 @@ def login():
             # if the username does not exist display message
             flash("Incorrect password or username was entered")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 
@@ -99,7 +98,6 @@ def profile(username):
         {"username": session["user"]})["username"]
     if session["user"]:
         return render_template("profile.html", username=username)
-    
     return redirect(url_for("login"))
 
 
@@ -146,6 +144,18 @@ def delete_film(film_id):
     flash("Film successfully deleted")
     return redirect(url_for("films"))
 
+
+@app.route("/add_review/<film_id>", methods=["GET", "POST"])
+def add_review(film_id):
+    if request.method == "POST":
+        submit = { "$set": {
+            "review": request.form.get("review")
+        }}
+        mongo.db.films.update_one({"_id": ObjectId(film_id)}, submit)
+        flash("Review successfully added")
+    film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    return render_template("add_review.html", film=film)
+    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
