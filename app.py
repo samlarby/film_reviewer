@@ -150,7 +150,7 @@ def delete_film(film_id):
 def add_review(film_id):
     if request.method == "POST":
         review = {
-            "username": request.form.get("username"),
+            "username": session.get("user"),
             "text": request.form.get("review"),
             "review_id": str(uuid.uuid4())
         }
@@ -162,6 +162,24 @@ def add_review(film_id):
         return redirect(url_for('films', film_id=film_id))
     film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("add_review.html", film=film)
+
+@app.route("/edit_review/<film_id>/<review_id>", methods=["GET", "POST"])
+def edit_review(film_id, review_id):
+    if request.method == "POST":
+        updated_review = {
+            "reviews.$.username": request.form.get("username"),
+            "reviews.$.text": request.form.get("review")
+        }
+        mongo.db.films.update_one(
+            {"_id": ObjectId(film_id), "reviews.review_id": review_id},
+            {"$set": updated_review}
+        )
+        flash("Review successfully updated")
+        return redirect(url_for('films', film_id=film_id))
+    film = mongo.db.films.find_one({"_id": ObjectId(film_id), "reviews.review_id": review_id},
+                                    {"reviews.$": 1})
+    review = film["reviews"][0]
+    return render_template("edit_review.html", film_id=film_id, review=review)
     
 
 @app.route("/delete_review/<film_id>/<review_id>")

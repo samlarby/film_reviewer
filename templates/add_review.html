@@ -3,15 +3,15 @@
 
     <h3 class="center-align">Add your review</h3>
     <div class="row">
-                  <form action="{{ url_for('add_review', film_id=film._id) }}" method="POST">
-                      <input id="film_name" name="film_name" class="validate" 
-                    minlength="1" maxlength="100" type="text" value="{{ film.film_name }}" required></input>
-                      <label class="active" for="film_name"></label>
-                      <input type="text" name="username" placeholder="Your Name" required>
-                      <textarea name="review" placeholder="Your Review" required></textarea>
-                      <button type="submit">Submit Review</button>
-                  </form>
-                  <a href="{{ url_for('films', film_id=film._id) }}">Back to Reviews</a>
+      <form action="{{ url_for('add_review', film_id=film._id) }}" method="POST">
+          <input id="film_name" name="film_name" class="validate" 
+        minlength="1" maxlength="100" type="text" value="{{ film.film_name }}" required></input>
+          <label class="active" for="film_name"></label>
+          <input type="text" name="username" placeholder="Your Name" required>
+          <textarea name="review" placeholder="Your Review" required></textarea>
+          <button type="submit">Submit Review</button>
+      </form>
+      <a href="{{ url_for('films', film_id=film._id) }}">Back to Reviews</a>
       </div>
 
 {% endblock %}

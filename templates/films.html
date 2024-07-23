@@ -36,11 +36,14 @@
                   <ul>
                       {% for review in film.reviews %}
                           <li><strong>{{ review.username }}:</strong> {{ review.text }}</li>
+                          <!-- only show buttons for the creator of the review -->
+                          {% if review.username == session.user %}
+                          <a href="{{ url_for('edit_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small blue">Edit</a>
                           <a href="{{ url_for('delete_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small red">Delete</a>
+                          {% endif %}
                       {% endfor %}
                   </ul>
                   <a href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
-                <!-- <a href="{{ url_for('add_review', film_id=film._id) }}" class="waves-effect waves-light btn-small">Add your review</a> -->
               </div>
             </li>
           </ul>
