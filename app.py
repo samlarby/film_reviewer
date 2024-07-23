@@ -61,7 +61,7 @@ def register():
         # put the user in a session cookie
         session["user"] = request.form.get("username").lower()
         flash("Your registration was successful")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", "add_review", username=session["user"]))
     return render_template("register.html")
 
 
@@ -161,7 +161,8 @@ def add_review(film_id):
         flash("Review successfully added")
         return redirect(url_for('films', film_id=film_id))
     film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
-    return render_template("add_review.html", film=film)
+    username = session.get("user")
+    return render_template("add_review.html", film=film, username=username)
 
 @app.route("/edit_review/<film_id>/<review_id>", methods=["GET", "POST"])
 def edit_review(film_id, review_id):
