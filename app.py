@@ -113,6 +113,7 @@ def logout():
 def add_film():
     if request.method == "POST":
         film = {
+            "username": session.get("user"),
             "film_name": request.form.get("film_name"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
@@ -121,13 +122,15 @@ def add_film():
         mongo.db.films.insert_one(film)
         flash("Film successfully added")
         return redirect(url_for('films'))
-    return render_template("add_film.html")
+    username = session.get("user")
+    return render_template("add_film.html", username=username)
 
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
     if request.method == "POST":
         submit = { "$set": {
+            "username": session.get("user"),
             "film_name": request.form.get("film_name"),
             "director": request.form.get("director"),
             "release_year": request.form.get("release_year"),
@@ -136,7 +139,8 @@ def edit_film(film_id):
         mongo.db.films.update_one({"_id": ObjectId(film_id)}, submit)
         flash("Film successfully edited")
     film = mongo.db.films.find_one({"_id":ObjectId(film_id)})
-    return render_template("edit_film.html", film=film)
+    username = session.get("user")
+    return render_template("edit_film.html", film=film, username=username)
 
 
 @app.route("/delete_film/<film_id>")

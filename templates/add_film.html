@@ -5,11 +5,18 @@
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_film') }}">
           <div class="row">
+            <div class="input-field col s12">
+              <i class="fa-solid fa-user prefix"></i> 
+              <input id="username" name="username" class="validate" value="{{ username }}"
+              required readonly></input>
+              <label class="active" for="film_name">Username</label>
+            </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-film prefix"></i> 
                 <input id="film_name" name="film_name" class="validate" 
                 minlength="1" maxlength="50" required></input>
                 <label class="active" for="film_name">Film Name</label>
+              </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-person prefix"></i>
                 <input id="director" name="director" class="validate"
