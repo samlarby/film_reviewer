@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+  {% if session.user %}
     <h3 class="center-align">Add your review</h3>
     <div class="row">
       <form action="{{ url_for('add_review', film_id=film._id) }}" method="POST">
@@ -13,5 +13,16 @@
       </form>
       <a href="{{ url_for('films', film_id=film._id) }}">Back to Reviews</a>
       </div>
+  {% else %}
+    <div class="container col-s12">
+      <div class="center-align home-button">
+        <h3>To leave a review please login or register</h3>
+        <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large">Login</a>
+        <a href=" {{ url_for('register') }}"class="waves-effect waves-light btn-large">Register</a>
+      </div>
+    </div>
+  {% endif %}
+  
+
 
 {% endblock %}
