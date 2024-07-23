@@ -31,9 +31,15 @@
           <ul class="collapsible col-s8">
             <li>
               <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Reviews</div>
-              <div class="collapsible-body">
-                <p>{{ film.review }}</p>
-                <a href="{{ url_for('add_review', film_id=film._id) }}" class="waves-effect waves-light btn-small">Add your review</a>
+              <div class="collapsible-body row">
+                <h2>Reviews</h2>
+                  <ul>
+                      {% for review in film.reviews %}
+                          <li><strong>{{ review.username }}:</strong> {{ review.text }}</li>
+                      {% endfor %}
+                  </ul>
+                  <a href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
+                <!-- <a href="{{ url_for('add_review', film_id=film._id) }}" class="waves-effect waves-light btn-small">Add your review</a> -->
               </div>
             </li>
           </ul>

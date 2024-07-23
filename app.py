@@ -148,15 +148,20 @@ def delete_film(film_id):
 @app.route("/add_review/<film_id>", methods=["GET", "POST"])
 def add_review(film_id):
     if request.method == "POST":
-        submit = { "$set": {
-            "review": request.form.get("review")
-        }}
-        mongo.db.films.update_one({"_id": ObjectId(film_id)}, submit)
+        review = {
+            "username": request.form.get("username"),
+            "text": request.form.get("review")
+        }
+        mongo.db.films.update_one(
+            {"_id": ObjectId(film_id)},
+            {"$push": {"reviews": review}}
+        )
         flash("Review successfully added")
+        return redirect(url_for('films', film_id=film_id))
+    
     film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("add_review.html", film=film)
     
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
