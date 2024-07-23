@@ -36,6 +36,7 @@
                   <ul>
                       {% for review in film.reviews %}
                           <li><strong>{{ review.username }}:</strong> {{ review.text }}</li>
+                          <a href="{{ url_for('delete_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small red">Delete</a>
                       {% endfor %}
                   </ul>
                   <a href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>

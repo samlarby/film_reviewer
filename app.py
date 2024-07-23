@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import uuid
 if os.path.exists("env.py"):
     import env
 
@@ -150,7 +151,8 @@ def add_review(film_id):
     if request.method == "POST":
         review = {
             "username": request.form.get("username"),
-            "text": request.form.get("review")
+            "text": request.form.get("review"),
+            "review_id": str(uuid.uuid4())
         }
         mongo.db.films.update_one(
             {"_id": ObjectId(film_id)},
@@ -158,10 +160,19 @@ def add_review(film_id):
         )
         flash("Review successfully added")
         return redirect(url_for('films', film_id=film_id))
-    
     film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     return render_template("add_review.html", film=film)
     
+
+@app.route("/delete_review/<film_id>/<review_id>")
+def delete_review(film_id, review_id):
+    mongo.db.films.update_one(
+        {"_id": ObjectId(film_id)},
+        {"$pull": {"reviews": {"review_id": review_id}}}
+    )
+    flash("Review successfully deleted")
+    return redirect(url_for("films"))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
