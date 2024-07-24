@@ -1,7 +1,54 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* base styling */
+html, body {
+    font-family:"Roboto", sans-serif;
+    background-color: #ece9e2;
+}
+
+nav {
+    background-color: #ece9e2;
+    box-shadow: none;
+}
+
+.nav-buttons a {
+    font-size: medium;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #e43d11;
+    letter-spacing: 0.5px;
+}
+
+
+.sidenav {
+    background-color: #8697c3;
+    color: white;
+}
+
+.sidenav li>a {
+    color: white;
+    font-weight: 300;
+    font-size: medium;
+    letter-spacing: 0.5px;
+}
+
+#page-title {
+    padding-left: 2%;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #e43d11;
+}
+
+/* homepage styling */
 .btn-small {
     margin: 5px;
 }
 
 .home-button {
-    padding: 20px; 
+    margin: 20px;
+    width: 25%;
+    border-radius: 10px;
 }
