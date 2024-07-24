@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<h4 class="blue-text">Films</h4>
-      <div class="row card-panel grey lighten-5">
+<h4 class="white-text films-title">Films</h4>
+      <div class="row card-panel" id="search-bar-container">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-search prefix"></i>
                     <input type="text" name="query" id="query" minlength="1" class="validate" required>
                     <label for="query">Search Films</label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('films') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-blue darken-1 btn text-shadow">
+                    <a href="{{ url_for('films') }}" class="btn text-shadow">Reset</a>
+                    <button type="submit" class=" btn text-shadow">
                         <i class="fas fa-search left"></i> Search
                     </button>
                 </div>
@@ -21,21 +21,20 @@
     {% if films|length > 0 %}
     <ul class="collection">
       {% for film in films %}
-        <li class="collection-item avatar">
-          <img src="{{ film.film_image }}"  class="circle responsive-img">
-          <strong>{{ film.film_name }}</strong>
-          <p> {{ film.release_year }} </p>
-          <p> {{ film.director }} </p>
+        <li class="collection-item avatar" id="film">
+          <img src="{{ film.film_image }}"  class="responsive-img" id="film-image">
+          <h5>{{ film.film_name }}</h5>
+          <p><strong>Year: </strong>{{ film.release_year }}</p>
+          <p><strong>Director: </strong>{{ film.director }}</p>
           <p>Film added by {{ film.username }}</p>
           {% if film.username == session.user %} 
           <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Edit</a>
           <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small red">Delete</a>
           {% endif %}
-          <ul class="collapsible col-s8">
+          <ul class="collapsible" id="review-dropdown-container">
             <li>
-              <div class="collapsible-header"><i class="fa-solid fa-pen"></i>Reviews</div>
+              <div class="collapsible-header" id="review-dropdown"><i class="fa-solid fa-pen"></i>Reviews</div>
               <div class="collapsible-body row">
-                <h2>Reviews</h2>
                   <ul>
                       {% for review in film.reviews %}
                           <li><strong>{{ review.username }}:</strong> {{ review.text }}</li>
