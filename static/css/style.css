@@ -5,19 +5,19 @@
 /* base styling */
 html, body {
     font-family:"Roboto", sans-serif;
-    background-color: #ece9e2;
+    background-color: #4abcad;
 }
 
 nav {
-    background-color: #ece9e2;
+    background-color: #4abcad;
     box-shadow: none;
 }
 
 .nav-buttons a {
     font-size: medium;
-    font-weight: 500;
+    font-weight: 800;
     text-transform: uppercase;
-    color: #e43d11;
+    color: #fff;
     letter-spacing: 0.5px;
 }
 
@@ -37,9 +37,9 @@ nav {
 #page-title {
     padding-left: 2%;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: 1px;
-    color: #e43d11;
+    color: #fff;
 }
 
 /* homepage styling */
@@ -51,4 +51,11 @@ nav {
     margin: 20px;
     width: 25%;
     border-radius: 10px;
+    box-shadow: 7px 4px #e17b5e;
+    background-color: #e37050;
+    font-weight: 500;
+}
+
+.home-button a {
+    background-color: #e17b5e;
 }

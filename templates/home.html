@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %} 
 {% if session.user %}
-<div class="container col-s12">
-    <div class="center-align home-button">
-        <a href=" {{ url_for('logout') }}"class="waves-effect waves-light btn-large">Logout</a>
+    <div class="row">
+        <div class="center-align home-button col s12">
+            <a href=" {{ url_for('logout') }}"class="waves-effect waves-light btn-large home-button">Logout</a>
+        </div>
     </div>
-{% else %}
-    <div class="center-align home-button">
-        <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large">Login</a>
-        <a href=" {{ url_for('register') }}"class="waves-effect waves-light btn-large">Register</a>
+    {% else %}
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large home-button">Login</a><br>
+            <a href=" {{ url_for('register') }}"class="waves-effect waves-light btn-large home-button">Register</a>
+        </div>
     </div>
-</div>
 {% endif %}
 {% endblock %}
