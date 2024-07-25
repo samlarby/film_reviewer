@@ -49,7 +49,6 @@ nav {
 
 .home-button {
     margin: 20px;
-    width: 25%;
     border-radius: 10px;
     box-shadow: 7px 4px #e17b5e;
     background-color: #e37050;
@@ -79,6 +78,11 @@ nav {
     margin: 0;
 }
 
+#search-bar input {
+    border-bottom: none;
+    box-shadow: none;
+}
+
 #film {
     min-height: 84px;
     padding-left: 133px;
@@ -96,11 +100,11 @@ nav {
 #film-image {
     position: absolute;
     height: 150px;
-    width: 15%;
     overflow: hidden;
     left: 15px;
     display: inline-block;
     vertical-align: middle;
+    border-radius: 5px;
 }
 
 #review-dropdown {

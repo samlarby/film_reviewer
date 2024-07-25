@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h4 class="white-text films-title">Films</h4>
+<h4 class="white-text films-title center-align">Films</h4>
       <div class="row card-panel" id="search-bar-container">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix"></i>
+                <div class="input-field col s12 m8" id="search-bar">
+                    <i class="fas fa-search prefix black-text"></i>
                     <input type="text" name="query" id="query" minlength="1" class="validate" required>
-                    <label for="query">Search Films</label>
+                    <label for="query" class="black-text">Search Films</label>
                 </div>
                 <div class="col s12 m4">
                     <a href="{{ url_for('films') }}" class="btn text-shadow">Reset</a>
@@ -45,7 +45,7 @@
                           {% endif %}
                       {% endfor %}
                   </ul>
-                  <a href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
+                  <a class="white-text btn-small" href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
               </div>
             </li>
           </ul>
@@ -53,6 +53,6 @@
         {% endfor %}
       </ul>
       {% else %}
-      <h3 class="red-text">No results found</h3>
+      <h3 class="black-text">No results found</h3>
       {% endif %}
 {% endblock %}
