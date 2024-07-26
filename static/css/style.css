@@ -8,6 +8,17 @@ html, body {
     background-color: #4abcad;
 }
 
+.flashes {
+    background-color: #e17b5e;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.flashes h4 {
+    margin-bottom: 0;
+}
+
+
 nav {
     background-color: #4abcad;
     box-shadow: none;
@@ -141,10 +152,6 @@ nav {
     background-color: transparent;
 }
 
-input:-internal-autofill-selected { 
-    background-color: #f6cd78; 
-}
-
 /* add films page */
 
 #add-film-container {
@@ -158,5 +165,24 @@ input:-internal-autofill-selected {
 
 #input-container label {
     color: black;
+}
+
+/* add/ reviews */
+
+#add-review-container {
+    background-color: #f6cd78;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.review-text-area {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    height: 39px;
+}
+
+.review-label {
+    padding-left: 5px;
 }
 
