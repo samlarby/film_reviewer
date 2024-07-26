@@ -79,7 +79,7 @@ def login():
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
                     return redirect(
-                        url_for("profile", username=session["user"]))
+                        url_for("films", username=session["user"]))
             else:
                 # if the password does not match then display a message
                 flash("Incorrect password or username was entered")
