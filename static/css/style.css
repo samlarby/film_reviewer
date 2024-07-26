@@ -55,6 +55,10 @@ nav {
     font-weight: 500;
 }
 
+.home-button:hover {
+    background-color: #e37050;
+}
+
 .home-button a {
     background-color: #e17b5e;
 }
@@ -72,6 +76,7 @@ nav {
     margin: 0;
     background-color: #f6cd78;
     border-radius: 5px;
+    height: auto;
 }
 
 #search-bar-container .row {
@@ -119,3 +124,39 @@ nav {
     margin: 0;
     box-shadow: none;
 }
+
+/* login and register page */
+
+.page-title {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.card-panel {
+    background-color: #f6cd78;
+    height: 311px;
+}
+
+.card-panel .input {
+    background-color: transparent;
+}
+
+input:-internal-autofill-selected { 
+    background-color: #f6cd78; 
+}
+
+/* add films page */
+
+#add-film-container {
+    background-color: #f6cd78;
+    border-radius: 15px;
+}
+
+#input-container {
+    padding: 20px;
+}
+
+#input-container label {
+    color: black;
+}
+

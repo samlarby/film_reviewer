@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Edit a film if something is not correct</h3>
-    <div class="row">
+    <h4 class="center-align white-text films-title">Edit your submitted film</h4>
+    <div class="row" id="add-film-container">
         <form class="col s12" method="POST" action="{{ url_for('edit_film', film_id=film._id) }}">
-          <div class="row">
+          <div class="row" id="input-container">
               <div class="input-field col s12">
                 <i class="fa-solid fa-user prefix"></i> 
                 <input id="username" name="username" class="validate" value="{{ username }}"
@@ -16,10 +16,11 @@
                 <input id="film_name" name="film_name" class="validate" 
                 minlength="1" maxlength="100" value="{{ film.film_name }}" required></input>
                 <label class="active" for="film_name">Film Name</label>
+              </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-person prefix"></i>
                 <input id="director" name="director" class="validate"
-                 minlength="5" maxlength="50" value="{{ film.director }}"" required></input>
+                 minlength="5" maxlength="50" value="{{ film.director }}" required></input>
                 <label class="active" for="director">Director</label>
               </div>
               <div class="input-field col s12">
@@ -34,8 +35,8 @@
                 value="{{ film.film_image }}"" required></input>
                 <label class="active" for="release_year">Upload a film image</label>
               </div>
-            </div>
           </div>
+      </div>
           <div class="row">
             <div class="col s12 center-align">
               <a href="{{ url_for('films' )}}" class="btn red">Cancel</a>  

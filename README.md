@@ -54,7 +54,8 @@
 ### Manual Javascript testing
 
 ## Bugs Found
-* A bug found whilst working on the website is that when trying to delete a review on a film it would delete the film as well. To overcome this I imported UUID to be able to generate unique id's for each review so they could be deleted that way. I used stack overflow to help me understand this. 
+* A bug found whilst working on the website is that when trying to delete a review on a film it would delete the film as well. To overcome this I imported UUID to be able to generate unique id's for each review so they could be deleted that way. I used stack overflow to help me understand this.
+
 
 ## Deployment 
 * This site was deployed to Heroku here are the steps:
