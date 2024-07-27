@@ -64,7 +64,11 @@
 ## Credits
 ### Image Credits
 
-### Quiz Questions
+### Resources used
+* I used this website https://devoriales.com/post/323/how-to-implement-pagination-in-your-flask-application to help me with the use of pagination.
+
+
+
 
 ### Acknowledgements
 * I would like to thanks my mentor Okwudiri Okoro for their support.
