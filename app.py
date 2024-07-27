@@ -146,7 +146,8 @@ def add_review(film_id):
         review = {
             "username": session.get("user"),
             "text": request.form.get("review"),
-            "review_id": str(uuid.uuid4())
+            "review_id": str(uuid.uuid4()),
+            "rating": int(request.form.get("rating"))
         }
         mongo.db.films.update_one(
             {"_id": ObjectId(film_id)},
@@ -163,7 +164,8 @@ def edit_review(film_id, review_id):
     if request.method == "POST":
         updated_review = {
             "reviews.$.username": request.form.get("username"),
-            "reviews.$.text": request.form.get("review")
+            "reviews.$.text": request.form.get("review"),
+            "reviews.$.rating": request.form.get("rating")
         }
         mongo.db.films.update_one(
             {"_id": ObjectId(film_id), "reviews.review_id": review_id},

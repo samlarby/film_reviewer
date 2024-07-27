@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   {% if session.user %}
-    <h3 class="center-align">Add your review</h3>
+    <h3 class="center-align white-text">Add your review</h3>
     <div class="row" id="add-review-container">
       <form action="{{ url_for('add_review', film_id=film._id) }}" method="POST" class="col s12">
         <div class="row" id="input-container">
@@ -19,11 +19,25 @@
             <textarea name="review" class="black-text review-text-area" required></textarea>
             <label for="review" class="review-label">Type you review here</label>
           </div>
-          <button type="submit" class="center-align">Submit Review</button>
+          <div class="input-field col s12">
+            <select name="rating" id="rating">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <label for="rating">Film Rating out of 5</label>
+          </div>
+        </div>
+        <div class="col s12 center-align">
+          <button type="submit" class=" btn">Submit Review</button>
         </div>
       </form>
-      <a href="{{ url_for('films', film_id=film._id) }}">Back to Reviews</a>
+      <a href="{{ url_for('films', film_id=film._id) }}" class="black-text">Back to Films</a>
       </div>
+      
   {% else %}
   <div class="row">
     <div class="container col s12 center-align">
