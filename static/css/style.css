@@ -177,7 +177,7 @@ nav {
 
 .pagination li a:hover {
     color: #e98b72; 
-
+}
 /* login and register page */
 
 .page-title {
@@ -204,7 +204,6 @@ nav {
 #add-film-container {
     background-color: #eed195;
     border-radius: 15px;
-    box-shadow: 8px 7px 0px 5px #e0b256;
 }
 
 #input-container {
