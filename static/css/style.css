@@ -55,7 +55,7 @@ nav {
 }
 
 .btn, .btn-small {
-    background-color: #ce7b64;
+    background-color: #e98b72;
 }
 
 .btn:hover, .btn-small:hover {
@@ -71,7 +71,7 @@ nav {
 .home-button {
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 7px 4px #e17b5e;
+    box-shadow: 2px 2px #e17b5e;
     background-color: #ce7b64;
     font-weight: 500;
 }
@@ -84,6 +84,9 @@ nav {
     background-color: #e17b5e;
 }
 
+.slogon {
+    font-weight: 300;
+}
 /* films.html styling */
 
 
@@ -170,10 +173,15 @@ nav {
 .card-panel {
     background-color: #eed195;
     height: 311px;
+    border-radius: 10px;
 }
 
 .card-panel .input {
     background-color: transparent;
+}
+
+.sign-in {
+    text-decoration: underline;
 }
 
 /* add films page */
