@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block styles %}
     {% endblock %}
-    <title>Film Reviews</title>
+    <title>Film Fanatic</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-wrapper">
-              <a href="{{ url_for('films') }}" class="brand-logo" id="page-title">Film Reviews</a>
+              <a href="{{ url_for('films') }}" class="brand-logo" id="page-title">Films Fanatic</a>
               <a data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down nav-buttons">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -34,7 +34,7 @@
           </nav>
         
           <ul class="sidenav" id="mobile-demo">
-                <li><h4 class="center-align">Film Reviews</h4></li>
+                <li><h4 class="center-align">Films Fanatic</h4></li>
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 {% if session.user %}
                 <li><a href="{{ url_for('films') }}">Films</a></li>
