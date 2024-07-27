@@ -8,3 +8,8 @@ $(document).ready(function(){
 
 $('#reviewarea').val('New Text');
   M.textareaAutoResize($('#review-area'));
+
+  
+$(document).ready(function(){
+  $('select').formSelect();
+});
