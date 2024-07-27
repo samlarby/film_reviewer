@@ -29,23 +29,27 @@
           <p>Film added by {{ film.username }}</p>
           {% if film.username == session.user %} 
           <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Edit</a>
-          <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small red">Delete</a>
+          <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Delete</a>
           {% endif %}
           <ul class="collapsible" id="review-dropdown-container">
             <li>
               <div class="collapsible-header" id="review-dropdown"><i class="fa-solid fa-pen"></i>Reviews</div>
               <div class="collapsible-body row">
                   <ul>
+                    <div class="col s12">
                       {% for review in film.reviews %}
-                          <li><strong>{{ review.username }}:</strong> {{ review.text }}</li>
+                          <li><strong>{{ review.username }}:</strong> {{ review.text }}  <strong>Rating:</strong> {{ review.rating }} / 5</li> 
                           <!-- only show buttons for the creator of the review -->
                           {% if review.username == session.user %}
-                          <a href="{{ url_for('edit_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small blue">Edit</a>
-                          <a href="{{ url_for('delete_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small red">Delete</a>
+                          <a href="{{ url_for('edit_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small">Edit Review</a>
+                          <a href="{{ url_for('delete_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small">Delete Review</a>
                           {% endif %}
                       {% endfor %}
+                    </div>
                   </ul>
-                  <a class="white-text btn-small" href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
+                  <div class="col s12 right-align">
+                    <a class="white-text btn-small" href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
+                  </div>  
               </div>
             </li>
           </ul>
