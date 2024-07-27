@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_parameter
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
@@ -25,8 +26,15 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/films")
 def films():
-    films = list(mongo.db.films.find())
-    return render_template("films.html", films=films)
+    films_collection = mongo.db.films
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    per_page = 10
+    offset = (page - 1) * per_page
+    films = list(films_collection.find().skip(offset).limit(per_page))
+    total = films_collection.count_documents({})
+    pagination = Pagination(page=page, total=total, per_page=per_page)
+    return render_template("films.html", films=films, pagination=pagination)
+
 
 
 @app.route("/home")

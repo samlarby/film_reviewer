@@ -163,6 +163,21 @@ nav {
     margin-right: 4px;
 }
 
+.pagination {
+    display: inline-block;
+}
+
+.pagination li.active {
+    background-color: transparent; 
+}
+
+.pagination li a {
+    color: white; 
+}
+
+.pagination li a:hover {
+    color: #e98b72; 
+
 /* login and register page */
 
 .page-title {
