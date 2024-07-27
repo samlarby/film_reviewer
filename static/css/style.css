@@ -5,22 +5,23 @@
 /* base styling */
 html, body {
     font-family:"Roboto", sans-serif;
-    background-color: #4abcad;
+    background-image: url(../images/paulina-milde-jachowska-m6OzmW0GrPk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .flashes {
     background-color: #e17b5e;
-    width: 50%;
+    width: 33%;
     border-radius: 5px;
 }
 
 .flashes h4 {
-    margin-bottom: 0;
+    margin: 5px;
 }
 
-
 nav {
-    background-color: #4abcad;
+    background-color: transparent;
     box-shadow: none;
 }
 
@@ -53,6 +54,15 @@ nav {
     color: #fff;
 }
 
+.btn, .btn-small {
+    background-color: #ce7b64;
+}
+
+.btn:hover, .btn-small:hover {
+    background-color: #d86d4f;
+}
+
+
 /* homepage styling */
 .btn-small {
     margin: 5px;
@@ -62,7 +72,7 @@ nav {
     margin: 20px;
     border-radius: 10px;
     box-shadow: 7px 4px #e17b5e;
-    background-color: #e37050;
+    background-color: #ce7b64;
     font-weight: 500;
 }
 
@@ -80,12 +90,13 @@ nav {
 .films-title {
     font-weight: 500;
     text-transform: uppercase;
+    margin-top: 0;
 }
 
 #search-bar-container {
     padding: 0;
     margin: 0;
-    background-color: #f6cd78;
+    background-color: #eed195;
     border-radius: 5px;
     height: auto;
 }
@@ -103,7 +114,7 @@ nav {
     min-height: 84px;
     padding-left: 133px;
     position: relative;
-    background-color: #f6cd78;
+    background-color: #eed195;
     margin: 5px;
     border: none;
     border-radius: 5px;
@@ -125,15 +136,28 @@ nav {
 
 #review-dropdown {
     border: none;
-    background-color: #f6cd78;
+    background-color: #eed195;
     justify-content: end;
     padding: 5px;
+}
+
+#review-dropdown:hover {
+    font-size: larger;
 }
 
 #review-dropdown-container {
     border: none;
     margin: 0;
     box-shadow: none;
+}
+
+.collapsible-body {
+    border: none;
+    padding: 0;
+}
+
+.collapsible-header i {
+    margin-right: 4px;
 }
 
 /* login and register page */
@@ -144,7 +168,7 @@ nav {
 }
 
 .card-panel {
-    background-color: #f6cd78;
+    background-color: #eed195;
     height: 311px;
 }
 
@@ -155,8 +179,9 @@ nav {
 /* add films page */
 
 #add-film-container {
-    background-color: #f6cd78;
+    background-color: #eed195;
     border-radius: 15px;
+    box-shadow: 8px 7px 0px 5px #e0b256;
 }
 
 #input-container {
@@ -178,7 +203,7 @@ nav {
 .review-text-area {
     margin-top: 5px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid black;
     height: 39px;
 }
 
@@ -186,3 +211,10 @@ nav {
     padding-left: 5px;
 }
 
+.dropdown-content {
+    background-color: #eed195;
+}
+
+.dropdown-content li>span {
+    color: black;
+}
