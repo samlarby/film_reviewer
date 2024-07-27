@@ -30,23 +30,29 @@ def films():
     page = request.args.get(get_page_parameter(), type=int, default=1)
     per_page = 10
     offset = (page - 1) * per_page
-    films = list(films_collection.find().skip(offset).limit(per_page))
-    total = films_collection.count_documents({})
-    pagination = Pagination(page=page, total=total, per_page=per_page)
-    return render_template("films.html", films=films, pagination=pagination)
 
+    query = request.args.get('query', '')
+    if query:
+        films = list(films_collection.find({"film_name": {"$regex": query, "$options": "i"}}).skip(offset).limit(per_page))
+        total = films_collection.count_documents({"film_name": {"$regex": query, "$options": "i"}})
+    else:
+        films = list(films_collection.find().skip(offset).limit(per_page))
+        total = films_collection.count_documents({})
+
+    pagination = Pagination(page=page, total=total, per_page=per_page)
+
+    return render_template("films.html", films=films, pagination=pagination, query=query)
+
+
+@app.route("/search", methods=["POST"])
+def search():
+    query = request.form.get("query")
+    return redirect(url_for("films", query=query))
 
 
 @app.route("/home")
 def home():
     return render_template("home.html")
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    films = list(mongo.db.films.find({"$text": {"$search": query}}))
-    return render_template("films.html", films=films)
 
 
 @app.route("/register", methods=["GET", "POST"])

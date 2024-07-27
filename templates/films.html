@@ -6,7 +6,7 @@
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8" id="search-bar">
                     <i class="fas fa-search prefix black-text"></i>
-                    <input type="text" name="query" id="query" minlength="1" class="validate" required>
+                    <input type="text" name="query" id="query" value="{{ query or '' }}" minlength="1" class="validate" required>
                     <label for="query" class="black-text">Search Films</label>
                 </div>
                 <div class="col s12 m4">
