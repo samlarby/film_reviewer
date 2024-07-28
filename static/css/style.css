@@ -144,6 +144,10 @@ nav {
     padding: 5px;
 }
 
+#review-dropdown-button {
+    margin: 0;
+}
+
 #review-dropdown:hover {
     font-size: larger;
 }
