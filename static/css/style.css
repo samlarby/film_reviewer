@@ -8,12 +8,16 @@ html, body {
     background-image: url(../images/paulina-milde-jachowska-m6OzmW0GrPk-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100%;
 }
 
 .flashes {
     background-color: #e17b5e;
-    width: 33%;
+    width: fit-content;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
 }
 
 .flashes h4 {
@@ -62,11 +66,30 @@ nav {
     background-color: #d86d4f;
 }
 
-
-/* homepage styling */
 .btn-small {
     margin: 5px;
+    height: fit-content;
 }
+
+.btn {
+    margin-bottom: 2px;
+    height: fit-content;
+}
+
+/* changing autofill background color */
+/* code copied from webflow, linked in the README file */
+input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+    color : black !important;
+    -webkit-text-fill-color: black !important;
+    -webkit-box-shadow: 0 0 0 1000px #eed195 inset !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+
+/* homepage styling */
 
 .home-button {
     margin: 20px;
@@ -149,7 +172,7 @@ nav {
 }
 
 #review-dropdown:hover {
-    font-size: larger;
+    color: #ce7b64;
 }
 
 #review-dropdown-container {
@@ -229,8 +252,9 @@ nav {
 .review-text-area {
     margin-top: 5px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid #afa693;
     height: 39px;
+    background-color: #eed195;
 }
 
 .review-label {
@@ -243,4 +267,20 @@ nav {
 
 .dropdown-content li>span {
     color: black;
+}
+
+.input-field .prefix.active {
+    color: black;
+}
+
+/* Media queries for screen sizes with the max width of 768px*/
+@media screen and (max-width: 768px) {
+    nav .nav-wrapper {
+        height: 110px;
+        text-align: center;
+    }
+
+    nav {
+        height: 110px;
+    }
 }
