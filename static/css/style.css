@@ -232,9 +232,8 @@ input:-webkit-autofill,
 
 .pagination li a:hover {
     color: #e98b72; 
-
-
 }
+
 #pagination-container nav {
     display: flex;
     justify-content: center;
