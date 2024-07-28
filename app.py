@@ -144,7 +144,7 @@ def edit_film(film_id):
         flash("Film successfully edited")
     film = mongo.db.films.find_one({"_id":ObjectId(film_id)})
     username = session.get("user")
-    return render_template("films.html", film=film, username=username)
+    return render_template("edit_film.html", film=film, username=username)
 
 
 @app.route("/delete_film/<film_id>")
