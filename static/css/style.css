@@ -45,7 +45,7 @@ nav {
 
 .sidenav li>a {
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     font-size: medium;
     letter-spacing: 0.5px;
 }
@@ -108,8 +108,18 @@ input:-webkit-autofill,
 }
 
 .slogon {
+    padding: 50px;
     font-weight: 300;
+    text-decoration: underline;
 }
+
+.slogon-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
 /* films.html styling */
 
 
@@ -117,6 +127,10 @@ input:-webkit-autofill,
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 0;
+}
+
+::placeholder {
+    color: black;
 }
 
 #search-bar-container {
@@ -136,14 +150,29 @@ input:-webkit-autofill,
     box-shadow: none;
 }
 
+
+
+.valign-wrapper {
+    flex-wrap: wrap;
+}
+
+.collection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 #film {
     min-height: 84px;
-    padding-left: 133px;
+    padding: 5px;
     position: relative;
     background-color: #eed195;
     margin: 5px;
     border: none;
     border-radius: 5px;
+    width: 60%;
 }
 
 .collection {
@@ -151,10 +180,9 @@ input:-webkit-autofill,
 }
 
 #film-image {
-    position: absolute;
     height: 150px;
+    width: fit-content;
     overflow: hidden;
-    left: 15px;
     display: inline-block;
     vertical-align: middle;
     border-radius: 5px;
@@ -204,6 +232,12 @@ input:-webkit-autofill,
 
 .pagination li a:hover {
     color: #e98b72; 
+
+
+}
+#pagination-container nav {
+    display: flex;
+    justify-content: center;
 }
 /* login and register page */
 
@@ -282,5 +316,19 @@ input:-webkit-autofill,
 
     nav {
         height: 110px;
+    }
+
+    #page-title {
+        line-height: normal;
+        margin-top: 10px;
+    }
+
+    .search-bar-buttons {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #search-bar {
+        margin-bottom: 0;
     }
 }

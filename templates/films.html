@@ -6,13 +6,12 @@
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8" id="search-bar">
                     <i class="fas fa-search prefix black-text"></i>
-                    <input type="text" name="query" id="query" value="{{ query or '' }}" minlength="1" class="validate" required>
-                    <label for="query" class="black-text">Search Films</label>
+                    <input type="text" name="query" id="query" value="{{ query or '' }}" minlength="1" class="black-text" placeholder="Search Films">
                 </div>
-                <div class="col s12 m4">
+                <div class="col s12 m4 search-bar-buttons">
                     <a href="{{ url_for('films') }}" class="btn text-shadow">Reset</a>
                     <button type="submit" class=" btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
+                        <i class="fas fa-search left search-button"></i> Search
                     </button>
                 </div>
             </div>
@@ -21,14 +20,16 @@
     {% if films|length > 0 %}
     <ul class="collection">
       {% for film in films %}
-        <li class="collection-item avatar" id="film">
+        <li class="collection-item avatar center-align" id="film">
+          <div class="col s12 center-align">
           <img src="{{ film.film_image }}"  class="responsive-img" id="film-image">
+          </div>
           <h5>{{ film.film_name }}</h5>
           <p><strong>Year: </strong>{{ film.release_year }}</p>
           <p><strong>Director: </strong>{{ film.director }}</p>
           <p>Film added by {{ film.username }}</p>
           {% if film.username == session.user %} 
-          <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Edit</a>
+          <a href="{{ url_for('edit_film', film_id=film._id) }}" class="waves-effect waves-light btn-small center-align">Edit</a>
           <a href="{{ url_for('delete_film', film_id=film._id) }}" class="waves-effect waves-light btn-small">Delete</a>
           {% endif %}
           <ul class="collapsible" id="review-dropdown-container">
@@ -37,8 +38,8 @@
               <div class="collapsible-header col s6 offset-s6" id="review-dropdown"><i class="fa-solid fa-pen"></i>Reviews</div>
             </div>
               <div class="collapsible-body row">
+                <div class="col s12">
                   <ul>
-                    <div class="col s12">
                       {% for review in film.reviews %}
                           <li><strong>{{ review.username }}:</strong> {{ review.text }}  <strong>Rating:</strong> {{ review.rating }} / 5</li> 
                           <!-- only show buttons for the creator of the review -->
@@ -47,8 +48,8 @@
                           <a href="{{ url_for('delete_review', film_id=film._id, review_id=review.review_id) }}" class="waves-effect waves-light btn-small">Delete Review</a>
                           {% endif %}
                       {% endfor %}
-                    </div>
                   </ul>
+                </div>
                   <div class="col s12 right-align">
                     <a class="white-text btn-small" href="{{ url_for('add_review', film_id=film._id) }}">Add a Review</a>
                   </div>  
@@ -59,7 +60,7 @@
         {% endfor %}
       </ul>
       <div class="row ">
-        <div class="col s12 center-align"> 
+        <div class="col s12 " id="pagination-container"> 
           {{ pagination.links }}
         </div>
       </div>
