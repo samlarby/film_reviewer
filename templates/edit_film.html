@@ -8,31 +8,31 @@
               <div class="input-field col s12">
                 <i class="fa-solid fa-user prefix"></i> 
                 <input id="username" name="username" class="validate" value="{{ username }}"
-                required readonly></input>
+                required readonly>
                 <label class="active" for="film_name">Username</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-film prefix"></i> 
                 <input id="film_name" name="film_name" class="validate" 
-                minlength="1" maxlength="100" value="{{ film.film_name }}" required></input>
+                minlength="1" maxlength="100" value="{{ film.film_name }}" required>
                 <label class="active" for="film_name">Film Name</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-person prefix"></i>
                 <input id="director" name="director" class="validate"
-                 minlength="5" maxlength="50" value="{{ film.director }}" required></input>
+                 minlength="5" maxlength="50" value="{{ film.director }}" required>
                 <label class="active" for="director">Director</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-calendar-days prefix"></i>
                 <input id="release_year" name="release_year" class="validate" 
-                pattern="^[0-9]{5, 15}$" value="{{ film.release_year }}" required></input>
+                pattern="^[0-9]{5, 15}$" value="{{ film.release_year }}" required>
                 <label class="active" for="release_year">Release Year</label>
               </div>
               <div class="input-field col s12">
                 <i class="fa-solid fa-camera-retro prefix"></i>
                 <input id="film_image" name="film_image" class="validate" 
-                value="{{ film.film_image }}"" required></input>
+                value="{{ film.film_image }}" required>
                 <label class="active" for="release_year">Upload a film image</label>
               </div>
           </div>
