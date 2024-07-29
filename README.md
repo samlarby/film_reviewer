@@ -3,62 +3,66 @@
 The purpose of this website is for people to see other peoples reviews of films. But also for users to be able to add their own reviews to films. The site is aimed at people who often watch films and want to find films to watch and see what others have said about them. If there is a new film not on the website users will be able to add it. 
 
 
-![Mock up image](documentation/mock-up.jpg)
+![Mock up image](documentation/readme/website-mockup.jpg)
 
 ## Features 
 * Navigation bar
     * A simple navigation bar is at the top of the page for users to easily go through. 
 
-![Navigation bar](documentation/)
+![Navigation bar](documentation/readme/navbar.jpg)
 
 * Home page
     * The home page is very simple if the user is not logged in it will show a login or register button.
     * If the user is logged in it will show a log out button. 
 
-![Home page](documentation/home-page.jpg)
+![Home page](documentation/readme/home-page.jpg)
 
 * Login page
     * The login page will have a panel for users to input their username and password and a login button.
 
-![Login page](documentation/)
+![Login page](documentation/readme/login-page.jpg)
 
 * Register page
     * The register page is similar to the login page but has register button instead. 
 
-![Register page](documentation/)
+![Register page](documentation/readme/register-page.jpg)
 
 * Films page
     * This is the main page of the website where all the films are displayed with a dropdown button for users to see the reviews of that film selected. 
     * There is also an option for the user to add a review or edit one of their previous reviews.
     * At the top of the page there is a search bar so users can find a film.
     
-![Films page](documentation/)
+![Films page](documentation/readme/films-page.jpg)
 
 * Add film 
     * This page users can add new films that are not already on the website. 
 
-![Add film](documentation/)
+![Add film](documentation/readme/add-film.jpg)
 
 * Edit film
     * A user can edit a film they previously added on this page. 
 
-![Edit film](documentation/)
+![Edit film](documentation/readme/edit-film.jpg)
 
 * Add review 
     * A form for users to add they're own review to a film.
 
-![Add review](documentation/)
+![Add review](documentation/readme/add-review.jpg)
 
 * Edit review
     * A user can change or edit they're review if they decide to. 
 
-![Edit Review](documentation/)
+![Edit Review](documentation/readme/edit-review.jpg)
 
+* Flash messages
+    * When the user logs in or adds a film a message will display at the top of the website. 
+
+![Flash Messages](documentation/readme/flash-messages.jpg)
 
 ## User Experience
 
 ### First time visitors
-* As a first time visitor I want to see the films.
+* As a first time visitor I want to see the films and I want to be able to search for a film.
 * I want to be able to see what people have said about certain films.
 * I want to be able to create my own account so I can review films in the future.
 
@@ -67,27 +71,33 @@ The purpose of this website is for people to see other peoples reviews of films.
 * I want to be able to review a film I have watched.
 * If the film I watched isn't on the website I want to be able to add it. 
 
-
-
 ### Design Choices
 * Colour Scheme
     * The two main colours used on this website are #e98b72 which is an orange colour and #eed195 which is a yellow colour. These colours were chosen to add a fun and proffessional look on top of a dark background. 
     
 * Typography
     * The font used was Roboto, with sans-serif set as a back up font. Roboto was used as it has an easy readibility and has a clean and modern design.
+
 * Imagery
     * The background image used was taken from unsplash, linked below in the acknowledgements section. 
 
-
-
     
 ### Flow chart
-* Here is my flowchart for adding films and reviews
+* Here is a flow chart of how I wanted the website to work. [Flowchart](documentation/readme/basic-flowchart.jpg)
 
 ![Flow chart](documentation/)
 
 ### Wireframes
-* All wireframes were created using Balsamiq wireframes, all designs for desktop, tablet and mobile are linked [here]!(documentation/wireframes/)
+* All wireframes were created using Balsamiq wireframes, all designs for desktop are shown and one of the mobile as the only thing to change on small screens is the navbar as you can see here. [here]!(documentation/readme/milestone-project-3.png)
+
+## Database design
+* The Films Fanatic website uses a non relational database on mongodb. 
+* The database contains 2 collections
+    * films
+        * Contains the films with all information
+        * Also contains the reviews for those films
+    * users
+        * Contains user information, passwords and usernames
 
 ### Testing
 #### Functional Testing
@@ -123,13 +133,16 @@ The purpose of this website is for people to see other peoples reviews of films.
     * All inputs are automaically rendered in the form. 
     * When edited they are then displayed a your film has been edited message. 
 * Delete film
-    * Only displayed for the film creator
+    * Only displayed for the film creator.
     * Once clicked the user is displayed a film deleted message. 
+    * This deletes all reviews associated with that film.
 * Search bar
     * If a film exists it is shown by searching for it.
     * If it doesnt exist it will show no results found and will shows a button to add their film.
 * Navbar testing
     * All navbar links take the user to the correct place, on both small and large screens. 
+* CRUD testing
+    * Testing on the add/edit/delete buttons was done to make sure there was no crossovers effecting each other. All work as intended. 
 
 ### Validator testing
 * PEP 8 Online
@@ -154,41 +167,91 @@ The purpose of this website is for people to see other peoples reviews of films.
 
 * All webpages were tested using lighthouse and all performed to a passable level for performance, accessability, best practises and SEO for both mobile and desktop screen sizes.
 
-
 ### Testing User Stories
 
 * First time visitor goals
-    
+    * As a first time visitor, users can see the films that are on the website with out having to create a account, they can also search for specific films if they wish. 
+    * They can enter each different reviews section on a film and see what people have rated the film and what they have said about it. They also do not need an account to do this. 
+    * The user can create an account by clicking on the register button or if they try to leave a review it will prompt them to login or register. 
 
 * Second time visitor goals
-    
+    * The user can log into their account that they previously created through the login page.
+    * If the user would like to review a film they have a watched they can search for it in the search bar then click on the reviews tab and add their review to that film.
+    * If the film they would like to review is not on the website then they can add it. They are prompted to do so if their search returns no results. 
 
 * Future visitor goals
+    * Future goals are to build a page that shows the top ten rated films on the website so users can go their to find a good film to watch. 
+    * Also to create a page where users can favourite films to create a watchlist for themselves. 
     
-### Further testing 
-
-### Manual Javascript testing
-
 ## Bugs Found
 * A bug found whilst working on the website is that when trying to delete a review on a film it would delete the film as well. To overcome this I imported UUID to be able to generate unique id's for each review so they could be deleted that way. I used stack overflow to help me understand this.
 
-
 ## Deployment 
-* This site was deployed to Heroku here are the steps:
-   
+### **Heroku**
 
+This application was built using the Gitpod IDE and deployed via Heroku. Follow these instructions to recreate the deployment process:
+
+**1. Prepare the required files**
+
+In the terminal in your code editor, type:
+
+```
+pip3 freeze --local > requirements.txt
+```
+
+and then...
+
+```
+echo web: python app.py > Procfile
+```
+
+These commands create two new files in your root directory which Heroku needs to run the application. Ensure Procfile includes a capital P and there is no file extension. Please check your Procfile and remove the last blank line if there is one, to avoid problems when trying to run your app.
+
+**2. Create the app**
+
+- Go to [Heroku](https://heroku.com/) and login to your account.
+- Click 'New' and then 'Create new app'.
+- Choose an app name and the region closest to you.
+
+**3. Linking to GitHub**
+
+- Within the deployment method, click 'GitHub'
+- With your GitHub profile selected, type in your repo name and then search.
+- Once found, click connect.
+
+**4. Environment variables**
+
+- Click on 'Settings' and then 'Reveal Config Vars'.
+- Add the required key/value variables from your env.py file.
+
+| Key          | Value              |
+| ------------ | ------------------ |
+| IP           | 0.0.0.0            |
+| PORT         | 5000               |
+| SECRET_KEY   | YOUR_SECRET_KEY*   |
+| MONGO_URI    | YOUR_MONGO_URI*    |
+| MONGO_DBNAME | YOUR_MONGO_DBNAME* |
+
+Values with * are your own values to be created.
+
+**5. Deployment**
+
+- Ensure your two files in step 1 are pushed to GitHub.
+- Within the 'Deploy' tab of your Heroku app, click 'Enable Automatic Deploys'
+- Just below this, click 'Deploy Branch'.
+- Within a few minutes, Heroku should confirm your app has been deployed with a button to view it online.   
+
+   
 ## Credits
 ### Image Credits
 * Background image https://unsplash.com/photos/a-black-background-with-a-white-border-m6OzmW0GrPk 
 
 ### Resources used
 * I used this website https://devoriales.com/post/323/how-to-implement-pagination-in-your-flask-application to help me with the use of pagination.
-
-
-
+* Deployement section in the README file was copied from https://github.com/danielanthonycollins/riff-review/blob/main/README.md?plain=1 
 
 ### Acknowledgements
-* I would like to thanks my mentor Okwudiri Okoro for their support.
+* I would like to thank my mentor Okwudiri Okoro for their support.
 * Also thank you to the slack community. 
 * Icons were taken from <https://fontawesome.com/>
 * Font was from <https://fonts.google.com/>
