@@ -29,7 +29,7 @@
         border-radius: 5px;
         width: 60%;">
           <div class="col s12 center-align">
-          <img src="{{ film.film_image }}"  class="film-image">
+          <img src="{{ film.film_image }}"  class="film-image" alt="image of a film">
           </div>
           <h5>{{ film.film_name }}</h5>
           <p><strong>Year: </strong>{{ film.release_year }}</p>
@@ -41,7 +41,7 @@
           {% endif %}
           <ul class="collapsible review-dropdown-container" >
             <li>
-            <div class="row" id="review-dropdown-button">
+            <div class="row review-dropdown-button">
               <div class="collapsible-header col s6 offset-s6 review-dropdown"><i class="fa-solid fa-pen"></i>Reviews</div>
             </div>
               <div class="collapsible-body row">
