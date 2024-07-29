@@ -52,7 +52,6 @@ nav {
 
 #page-title {
     padding-left: 2%;
-    text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 1px;
     color: #fff;
@@ -125,7 +124,6 @@ input:-webkit-autofill,
 
 .films-title {
     font-weight: 500;
-    text-transform: uppercase;
     margin-top: 0;
 }
 
