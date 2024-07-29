@@ -6,7 +6,7 @@
             <div class="row valign-wrapper center-align">
                 <div class="input-field col s12 m8" id="search-bar">
                     <i class="fas fa-search prefix black-text"></i>
-                    <input type="text" name="query" id="query" value="{{ query or '' }}" minlength="1" class="black-text" placeholder="Search Films">
+                    <input type="text" name="query" id="query" value="{{ query }}" minlength="1" class="black-text" placeholder="Search Films">
                 </div>
                 <div class="col s12 m4 search-bar-buttons">
                     <a href="{{ url_for('films') }}" class="btn text-shadow">Reset</a>
@@ -65,6 +65,9 @@
         </div>
       </div>
       {% else %}
-      <h3 class="black-text">No results found</h3>
+      <div class="col s12 center-align">
+      <h4 class="white-text">No results found</h4>
+      <h5 class="white-text">Want to add a film?<a style="color: #e98b72;" href="{{ url_for('add_film') }}"> click here</a></h5>
+      </div>
       {% endif %}
 {% endblock %}
