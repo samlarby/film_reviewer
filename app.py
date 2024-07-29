@@ -142,6 +142,7 @@ def edit_film(film_id):
         }}
         mongo.db.films.update_one({"_id": ObjectId(film_id)}, submit)
         flash("Film successfully edited")
+        return redirect(url_for('films'))
     film = mongo.db.films.find_one({"_id":ObjectId(film_id)})
     username = session.get("user")
     return render_template("edit_film.html", film=film, username=username)
