@@ -264,7 +264,7 @@ input:-webkit-autofill,
 /* add/ reviews */
 
 #add-review-container {
-    background-color: #f6cd78;
+    background-color: #eed195;
     border-radius: 15px;
     padding: 20px;
 }
@@ -274,7 +274,7 @@ input:-webkit-autofill,
     border-radius: 5px;
     border: 1px solid #afa693;
     height: 39px;
-    background-color: #eed195;
+    background-color: #f6cd78;
 }
 
 .review-label {
