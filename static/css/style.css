@@ -164,22 +164,11 @@ input:-webkit-autofill,
     align-items: center;
 }
 
-#film {
-    min-height: 84px;
-    padding: 5px;
-    position: relative;
-    background-color: #eed195;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    width: 60%;
-}
-
 .collection {
     border: none;
 }
 
-#film-image {
+.film-image {
     height: 150px;
     width: fit-content;
     overflow: hidden;
@@ -188,22 +177,22 @@ input:-webkit-autofill,
     border-radius: 5px;
 }
 
-#review-dropdown {
+.review-dropdown {
     border: none;
     background-color: #eed195;
     justify-content: end;
     padding: 5px;
 }
 
-#review-dropdown-button {
+.review-dropdown-button {
     margin: 0;
 }
 
-#review-dropdown:hover {
+.review-dropdown:hover {
     color: #ce7b64;
 }
 
-#review-dropdown-container {
+.review-dropdown-container {
     border: none;
     margin: 0;
     box-shadow: none;
