@@ -92,35 +92,64 @@ The purpose of this website is for people to see other peoples reviews of films.
 ### Testing
 #### Functional Testing
 * Creating a user
-    * 
+    * This works as it should. A user can be created if the username does not already exist. 
+    * When created the user is shown a welcome message and directed to the films page.
 * Logging in as user 
-    *
+    * Similarly to register the user is shown a welcome message and directed to the films page.
+    * If the username or password was wrong or does not exist the user is shown an incorrect password or username message. 
 * Logging out
-    *
+    * The log out button is clicked and the user is logged out and taken back to the login page. 
+    * The user is also flashed a you have been logged out message. 
 * Add review
-    *
+    * The add review button is clicked and the user is taken to the add review page.
+    * Username and film name is automatically rendered.
+    * The user can leave a review and a rating score.
+    * Once submitted the user is taken back to the films page and their review will appear on the corresponding film they added it to. 
 * Edit review
-    *
+    * If the user is the creater of the review they are given the option to edit it.
+    * Click edit review takes them to the edit review page.
+    * When submitted their review updates. 
+    * Message shown saying their review is updated. 
 * Delete review
-    *
+    * When clicked the users review is deleted.
+    * Also shown a message to say that their review has been deleted. 
 * Add film 
-    *
+    * Add film button takes user to add film page.
+    * Form for adding films is displayed with the users name automatically rendering. 
+    * User can fill out form, but can't submit it unless all fields are filled in. 
+    * When submitted the film is then displayed on the films page. 
 * Edit film 
-    * 
+    * Only displayed if user is the creator of the film. 
+    * All inputs are automaically rendered in the form. 
+    * When edited they are then displayed a your film has been edited message. 
 * Delete film
-    * 
+    * Only displayed for the film creator
+    * Once clicked the user is displayed a film deleted message. 
 * Search bar
-    * 
-* 
+    * If a film exists it is shown by searching for it.
+    * If it doesnt exist it will show no results found and will shows a button to add their film.
+* Navbar testing
+    * All navbar links take the user to the correct place, on both small and large screens. 
 
 ### Validator testing
+* PEP 8 Online
+    * This validator Service was used to validate the python file in the project to ensure there were no syntax errors in the project. The results were all clear as shown below. 
+    <details>
+        <summary>PEP 8</summary>
+        ![PEP 8](documentation/readme/pep8-validation.jpg "PEP8")
+    </details>
 
-
-
-     
-
-
-### Manual and Automated testing
+* The W3C CSS validator and the W3C Markup Validator were used to validate every page of the project to make sure there were no syntax errors.
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) [Result](documentation/readme/css-valid.jpg)
+* [W3C Markup Validator](https://validator.w3.org/) - Results for each page are below
+        * [Home page](documentation/readme/homepage-validation.jpg)
+        * [Films page](documentation/readme/films-validation.jpg)
+        * [Add film](documentation/readme/add-film-validation.jpg)
+        * [Edit film]()
+        * [Add review]()
+        * [Edit review]()
+        * [Login]()
+        * [Register]()
 
 
 ### Testing User Stories
