@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %} 
+<h4 class="white-text center-align">Welcome to fanatic films</h4>
 {% if session.user %}
     <div class="row">
         <div class="center-align col s12">
-            <a href=" {{ url_for('logout') }}"class="waves-effect waves-light btn-large home-button">Logout</a>
+            <a href=" {{ url_for('logout') }}" class="waves-effect waves-light btn-large home-button">Logout</a>
         </div>
     </div>
     {% else %}
     <div class="row">
         <div class="col s12 center-align">
-            <a href=" {{ url_for('login') }}"class="waves-effect waves-light btn-large home-button">Login</a><br>
-            <a href=" {{ url_for('register') }}"class="waves-effect waves-light btn-large home-button">Register</a>
+            <a href=" {{ url_for('login') }}" class="waves-effect waves-light btn-large home-button">Login</a><br>
+            <a href=" {{ url_for('register') }}" class="waves-effect waves-light btn-large home-button">Register</a>
         </div>
     </div>
 {% endif %}
