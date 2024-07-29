@@ -145,11 +145,14 @@ The purpose of this website is for people to see other peoples reviews of films.
         * [Home page](documentation/readme/homepage-validation.jpg)
         * [Films page](documentation/readme/films-validation.jpg)
         * [Add film](documentation/readme/add-film-validation.jpg)
-        * [Edit film]()
-        * [Add review]()
-        * [Edit review]()
-        * [Login]()
-        * [Register]()
+        * [Edit film](documentation/readme/edit-film-validation.jpg)
+        * [Add review](documentation/readme/add-review-validation.jpg)
+        * [Edit review](documentation/readme/edit-review-validation.jpg)
+        * [Login](documentation/readme/login-validation.jpg)
+        * [Register](documentation/readme/register-validation.jpg)
+* [JSHint](https://jshint.com) [Javascript validation](documentation/readme/js-validation.jpg)
+
+* All webpages were tested using lighthouse and all performed to a passable level for performance, accessability, best practises and SEO for both mobile and desktop screen sizes.
 
 
 ### Testing User Stories
