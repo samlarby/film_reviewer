@@ -85,10 +85,9 @@ The purpose of this website is for people to see other peoples reviews of films.
 ### Flow chart
 * Here is a flow chart of how I wanted the website to work. [Flowchart](documentation/readme/basic-flowchart.jpg)
 
-![Flow chart](documentation/)
 
 ### Wireframes
-* All wireframes were created using Balsamiq wireframes, all designs for desktop are shown and one of the mobile as the only thing to change on small screens is the navbar as you can see here. [here]!(documentation/readme/milestone-project-3.png)
+* All wireframes were created using Balsamiq wireframes, all designs for desktop are shown and one of the mobile as the only thing to change on small screens is the navbar as you can see [here](documentation/readme/milestone-project-3.png)
 
 ## Database design
 * The Films Fanatic website uses a non relational database on mongodb. 
@@ -155,14 +154,14 @@ The purpose of this website is for people to see other peoples reviews of films.
 * The W3C CSS validator and the W3C Markup Validator were used to validate every page of the project to make sure there were no syntax errors.
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) [Result](documentation/readme/css-valid.jpg)
 * [W3C Markup Validator](https://validator.w3.org/) - Results for each page are below
-        * [Home page](documentation/readme/homepage-validation.jpg)
-        * [Films page](documentation/readme/films-validation.jpg)
-        * [Add film](documentation/readme/add-film-validation.jpg)
-        * [Edit film](documentation/readme/edit-film-validation.jpg)
-        * [Add review](documentation/readme/add-review-validation.jpg)
-        * [Edit review](documentation/readme/edit-review-validation.jpg)
-        * [Login](documentation/readme/login-validation.jpg)
-        * [Register](documentation/readme/register-validation.jpg)
+    * [Home page](documentation/readme/homepage-validation.jpg)
+    * [Films page](documentation/readme/films-validation.jpg)
+    * [Add film](documentation/readme/add-film-validation.jpg)
+    * [Edit film](documentation/readme/edit-film-validation.jpg)
+    * [Add review](documentation/readme/add-review-validation.jpg)
+    * [Edit review](documentation/readme/edit-review-validation.jpg)
+    * [Login](documentation/readme/login-validation.jpg)
+    * [Register](documentation/readme/register-validation.jpg)
 * [JSHint](https://jshint.com) [Javascript validation](documentation/readme/js-validation.jpg)
 
 * All webpages were tested using lighthouse and all performed to a passable level for performance, accessability, best practises and SEO for both mobile and desktop screen sizes.
@@ -170,14 +169,21 @@ The purpose of this website is for people to see other peoples reviews of films.
 ### Testing User Stories
 
 * First time visitor goals
-    * As a first time visitor, users can see the films that are on the website with out having to create a account, they can also search for specific films if they wish. 
-    * They can enter each different reviews section on a film and see what people have rated the film and what they have said about it. They also do not need an account to do this. 
-    * The user can create an account by clicking on the register button or if they try to leave a review it will prompt them to login or register. 
+    * As a first time visitor I want to see the films and I want to be able to search for a film.
+        * Users can see the films that are on the website with out having to create a account, they can also search for specific films if they wish. 
+    * I want to be able to see what people have said about certain films.
+        * They can enter each different reviews section on a film and see what people have rated the film and what they have said
+         about it. They also do not need an account to do this. 
+    * I want to be able to create my own account so I can review films in the future.
+        * The user can create an account by clicking on the register button or if they try to leave a review it will prompt them to login or register. 
 
 * Second time visitor goals
-    * The user can log into their account that they previously created through the login page.
-    * If the user would like to review a film they have a watched they can search for it in the search bar then click on the reviews tab and add their review to that film.
-    * If the film they would like to review is not on the website then they can add it. They are prompted to do so if their search returns no results. 
+    * As a second time visitor I want to be able to log into my account.
+        * The user can log into their account that they previously created through the login page.
+    * I want to be able to review a film I have watched.
+        * If the user would like to review a film they have a watched they can search for it in the search bar then click on the reviews tab and add their review to that film.
+    *   If the film I watched isn't on the website I want to be able to add it.
+        * If the film they would like to review is not on the website then they can add it. They are prompted to do so if their search returns no results. 
 
 * Future visitor goals
     * Future goals are to build a page that shows the top ten rated films on the website so users can go their to find a good film to watch. 
