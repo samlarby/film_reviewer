@@ -229,7 +229,6 @@ input:-webkit-autofill,
 /* login and register page */
 
 .page-title {
-    text-transform: uppercase;
     font-weight: 500;
 }
 
