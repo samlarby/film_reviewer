@@ -192,8 +192,6 @@ The purpose of this website is for people to see other peoples reviews of films.
 ## Bugs Found
 * A bug found whilst working on the website is that when trying to delete a review on a film it would delete the film as well. To overcome this I imported UUID to be able to generate unique id's for each review so they could be deleted that way. I used stack overflow to help me understand this.
 
-* An unsolved bug is that the home page is not rendering as the home screen but the films page is.
-
 ## Deployment 
 ### **Heroku**
 
