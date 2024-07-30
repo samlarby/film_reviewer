@@ -21,8 +21,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/films")
 def films():
+    # render films page with pagination
     films_collection = mongo.db.films
     page = request.args.get(get_page_parameter(), type=int, default=1)
     per_page = 10
@@ -47,17 +53,14 @@ def films():
 
 @app.route("/search", methods=["POST"])
 def search():
+    # create a search function
     query = request.form.get("query")
     return redirect(url_for("films", query=query))
 
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # render a register form
     if request.method == "POST":
         # check if the username already exists in the database
         existing_user = mongo.db.users.find_one(
@@ -115,6 +118,7 @@ def logout():
 
 @app.route("/add_film", methods=["GET", "POST"])
 def add_film():
+    # add a new film if POST add it to the database
     if request.method == "POST":
         film = {
             "username": session.get("user"),
@@ -132,6 +136,7 @@ def add_film():
 
 @app.route("/edit_film/<film_id>", methods=["GET", "POST"])
 def edit_film(film_id):
+    # allow user to edit film, update the edit in the database
     if request.method == "POST":
         submit = {"$set": {
             "username": session.get("user"),
@@ -157,6 +162,8 @@ def delete_film(film_id):
 
 @app.route("/add_review/<film_id>", methods=["GET", "POST"])
 def add_review(film_id):
+    # add a review to a specific film
+    # if post, add that review to the corresponding film in the database
     if request.method == "POST":
         review = {
             "username": session.get("user"),
@@ -177,6 +184,7 @@ def add_review(film_id):
 
 @app.route("/edit_review/<film_id>/<review_id>", methods=["GET", "POST"])
 def edit_review(film_id, review_id):
+    # allow user to edit review and post new review to the database and overlap the old
     if request.method == "POST":
         updated_review = {
             "reviews.$.username": request.form.get("username"),
